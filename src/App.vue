@@ -1,9 +1,19 @@
 <template>
   <div id="main-app" class="container">
     <div class="row justify-content-center">
-      <add-appointment @add="addItem"/>
-      <search-appointments @searchRecords="searchAppointments" :myKey="filterKey" :myDir="filterDir"/>
-      <appointment-list :appointments="filteredApts" @remove="removeItem" @edit="editItem"/>
+      <add-appointment @add="addItem" />
+      <search-appointments
+        @searchRecords="searchAppointments"
+        :myKey="filterKey"
+        :myDir="filterDir"
+        @requestKey="changeKey"
+        @requestDir="changeDir"
+      />
+      <appointment-list
+        :appointments="filteredApts"
+        @remove="removeItem"
+        @edit="editItem"
+      />
     </div>
   </div>
 </template>
@@ -51,16 +61,23 @@ export default {
         );
       });
     },
-    filteredApts: function () {
+    filteredApts: function() {
       return _.orderBy(
         this.searchedApts,
-        item =>  {
+        item => {
           return item[this.filterKey].toLowerCase();
-        }, this.filterDir
-      )
+        },
+        this.filterDir
+      );
     }
   },
   methods: {
+    changeKey: function(value) {
+      this.filterKey = value;
+    },
+    changeDir: function(value) {
+      this.filterDir = value;
+    },
     searchAppointments: function(terms) {
       this.searchTerms = terms;
     },
