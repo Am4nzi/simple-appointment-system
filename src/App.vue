@@ -1,16 +1,19 @@
 <template>
   <div id="main-app" class="container">
-    <div class="row"></div>
+    <div class="row justify-content-center">
+      <add-appointment />
     <appointment-list
       :appointments="appointments"
       @remove="removeItem"
       @edit="editItem"
     />
+    </div>
   </div>
 </template>
 
 <script>
 import AppointmentList from "./components/AppointmentList";
+import AddAppointment from "./components/AddAppointment";
 import _ from "lodash";
 import axios from "axios";
 
@@ -24,7 +27,8 @@ export default {
     };
   },
   components: {
-    AppointmentList
+    AppointmentList,
+    AddAppointment
   },
   mounted() {
     axios.get("./data/appointments.json").then(
