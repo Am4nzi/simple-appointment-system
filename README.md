@@ -1,24 +1,15 @@
-# vue-essentials
+# Appointment Interface
 
-## Project setup
-```
-npm install
-```
+A Vue.js application which provides theh user with the ability to monitor and change appointments.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Tech
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Vue.js, JavaScript, Node.js, HTML, CSS, BootStrap, Lodash
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Features
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+-   Add appointments with fields including date, time and notes.
+
+-   Delete appointments
+
+-   Filter/Sort by feature, with the ability to sort by ascending or descending
