@@ -1,6 +1,6 @@
 # Appointment Interface
 
-A Vue.js application which provides theh user with the ability to monitor and change appointments.
+A simple Vue.js appointment booking system which provides the user with the ability to add, remove and make adjustments to their appointments.
 
 ## Tech
 
